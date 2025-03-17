@@ -13,4 +13,5 @@ Contents
 .. toctree::
 
    auth
+   customer
    electronic_devices
