@@ -105,6 +105,19 @@
     -H 'Authorization: Bearer <توکن شما که در مرحله احراز هویت گرفتید> \
     -H 'Content-Type: application/json'
 
+برای بروزرسانی فاکتور صدور بیمه نامه :
+
+    ``POST``
+    ``https://api-asato.mihaninsurance.com/insurance_policy_buy/electronic-device/<آیدی صدور بیمه نامه>``
+
+.. code-block:: console
+
+   curl -X 'PATCH' \
+    'https://api-asato.mihaninsurance.com/insurance_policy_buy/electronic-device/<آیدی صدور بیمه نامه>' \
+    -H 'accept: application/json' \
+    -H 'Authorization: Bearer <توکن شما که در مرحله احراز هویت گرفتید> \
+    -H 'Content-Type: application/json'
+
 بدنه ورودی :
 
 .. code-block:: console
@@ -154,3 +167,203 @@
 
 بدنه خروجی وبسرویس :
 
+
+.. code-block:: console
+
+    {
+      "status": "ok",
+      "data": {
+        "id": "4e868dea-cab4-4e7d-a067-f43fe3246033", # آیدی صدور بیمه نامه
+        "insurance_factor_id": "083ba303-b9c6-412b-a8d7-e1b59f96df10", # آیدی فاکتور بیمه نامه
+        "previous_policy_ci_number": 0,
+        "extended_policy_code": 0,
+        "previous_policy_no": 0,
+        "previous_insurance_corp_code": 320,
+        "marketer_code": 0,
+        "insured_city_code": 0,
+        "insured_address": "string",
+        "beneficiary_code": 0,
+        "is_in_free_region": 0,
+        "free_region_code": 0,
+        "proposal_date": "string",
+        "proposal_number": 0,
+        "attachment_files": [
+          "string"
+        ],
+        "insured_devices": [
+          {
+            "row": 0,
+            "caption": "string",
+            "address": "string",
+            "count": 0,
+            "brand": "string",
+            "model": "string",
+            "manufacturer_country_code": 0,
+            "production_year": 0,
+            "serial_no": "string",
+            "insured_value": 0,
+            "components": [
+              {
+                "component_code": 0,
+                "brand": "string",
+                "serial_no": "string",
+                "count": 0,
+                "insured_value": 0
+              }
+            ]
+          }
+        ],
+        "response": {},
+        "insurance_factor": {
+          "id": "083ba303-b9c6-412b-a8d7-e1b59f96df10",
+          "state": "CREATED",
+          "user_id": "b2ecc23e-3df4-4576-9a03-9e6e2f70f2e8",
+          "insurance_type_code": 55,
+          "insurance_plan_code": 0,
+          "insurer_customer_code": 0,
+          "insured_customer_code": null,
+          "insurance_policy_code": null,
+          "policy_ver_no": null,
+          "tax": null,
+          "toll": null,
+          "premium": null,
+          "begin_date": null,
+          "end_date": null,
+          "insurer": {
+            "id": "397cab0e-d295-4c7c-80fe-6b9ce9b424ac",
+            "code": 0,
+            "created_at": "2025-02-09T12:21:37.650943Z",
+            "updated_at": null,
+            "ad_birth_day": null,
+            "ad_birth_month": null,
+            "ad_birth_year": null,
+            "address": "تهران -خيابان شهيد خالد اسلامبولي، نبش خيابان بيست و هشتم ، پلاک 90",
+            "birth_city_code": null,
+            "birth_day": null,
+            "birth_month": null,
+            "birth_year": null,
+            "cii_mobile_status": 2126,
+            "cii_validation_status": 2128,
+            "city_code": null,
+            "company_code": "10103698106",
+            "economic_code": "None",
+            "education_field": "None",
+            "education_level_code": null,
+            "email": null,
+            "en_address": null,
+            "en_last_name": null,
+            "en_name": null,
+            "father_name": null,
+            "fax": null,
+            "gender_code": null,
+            "identity_no": "None",
+            "identity_no_issu_place": null,
+            "is_iranian": 1,
+            "is_main_person": 1,
+            "is_valid": 1,
+            "is_verified": 1,
+            "job_address": null,
+            "last_name": null,
+            "legal_person_registration_date": "1387/06/18",
+            "legal_person_registry_office_status": "فعال",
+            "main_person_code": null,
+            "marital_status": "None",
+            "mobile": null,
+            "name": "بيمه ميهن",
+            "national_code": null,
+            "nationality_code": null,
+            "naturalized_code": null,
+            "ownership_code": null,
+            "passport_no": "None",
+            "person_kind_code": 47,
+            "postal_code": "1511916413",
+            "register_no": "330902",
+            "religion_code": null,
+            "tel": "88505864",
+            "city": null,
+            "roles": []
+          },
+          "insured": null,
+          "insurance_plan": {
+            "id": null,
+            "code": null,
+            "created_at": null,
+            "updated_at": null,
+            "insurance_type_code": null,
+            "festival_code": null,
+            "payload": null,
+            "insurance_type": {
+              "id": null,
+              "code": null,
+              "created_at": null,
+              "updated_at": null,
+              "title": null,
+              "name": null,
+              "icon": null,
+              "is_active": null,
+              "type": null,
+              "is_buy_active": null
+            },
+            "festival": {
+              "id": null,
+              "code": null,
+              "name": null,
+              "created_at": null,
+              "updated_at": null
+            }
+          },
+          "created_at": "2025-03-17T08:00:48.992850Z",
+          "updated_at": null
+        },
+        "city": null
+      }
+    }
+
+ثبت درخواست در فناوران
+----------------
+
+با فراخوانی این وب سرویس بیمه نامه در فناوران ثبت میشود :
+
+    ``POST``
+    ``https://api-asato.mihaninsurance.com/insurance_policy_buy/electronic-device/submit/<آیدی صدور بیمه نامه>``
+
+
+.. code-block:: console
+
+   curl -X 'GET' \
+      'https://api-asato.mihaninsurance.com/insurance_policy_buy/electronic-device/submit/<آیدی صدور بیمه نامه>' \
+      -H 'accept: application/json'
+
+پرداخت فاکتور در فناوران
+----------------
+
+با فراخوانی این وب سرویس بیمه نامه در فناوران ثبت میشود :
+
+    ``POST``
+    ``https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay``
+
+
+.. code-block:: console
+
+   curl -X 'POST' \
+  'https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json'
+
+بدنه ورودی :
+
+.. code-block:: console
+
+    {
+      "factor_id": "083ba303-b9c6-412b-a8d7-e1b59f96df10"
+    }
+
+بدنه خروجی وبسرویس :
+
+
+.. code-block:: console
+
+    {
+      "status": "ok",
+      "data": <لینک درگاه پرداخت>
+    }

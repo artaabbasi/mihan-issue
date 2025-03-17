@@ -7,11 +7,12 @@
 
    این پروژه در حال توسعه است. در صورت بروز هر گونه مشکل با پشتیبانی فنی در ارتباط باشید
 
-Contents
+مستندات
 --------
 
 .. toctree::
 
+   common
    auth
    customer
    electronic_devices
