@@ -16,3 +16,4 @@
    auth
    customer
    electronic_devices
+   third_party
