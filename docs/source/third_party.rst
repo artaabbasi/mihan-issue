@@ -95,7 +95,7 @@
     {
       "insurance_plan_code": <کد طرح انتخابی که در مرحله قبل گرفتید>,
       "insurer_customer_code": <کد بیمه گزار>,
-      "location_code": 220,
+      "location_code": 220,<واحد صدور بیمه نامه>
       "start_from_days": 0,
       "national_code": "string",
       "previous_policy_status": "YES",
