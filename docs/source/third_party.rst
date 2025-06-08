@@ -511,3 +511,42 @@
       "status": "ok",
       "data": <لینک درگاه پرداخت>
     }
+
+
+دریافت فایل PDF بیمه‌نامه شخص ثالث
+====================================
+
+با فراخوانی این وب‌سرویس، فایل PDF بیمه‌نامه شخص ثالث بر اساس کد رایانه بیمه‌نامه دریافت می‌شود.
+
+درخواست
+--------
+
+``GET`` ``https://api-asato.mihaninsurance.com/insurance_policy_buy/third-party/print_by_code/{policy_code}/``
+
+**پارامترهای مسیر (Path Parameters):**
+
+- ``policy_code`` (اجباری)  
+  کد رایانه بیمه‌نامه که باید در URL جایگذاری شود.
+
+**هدرهای درخواست:**
+
+.. code-block:: http
+
+    accept: application/json
+    Authorization: Bearer {token}
+
+پاسخ
+-----
+
+در صورت موفقیت، پاسخ شامل **فایل PDF بیمه‌نامه** با `Content-Type: application/pdf` خواهد بود.
+
+مثال (cURL)
+-----------
+
+.. code-block:: bash
+
+    curl -X 'GET' \
+      'https://api-asato.mihaninsurance.com/insurance_policy_buy/third-party/print_by_code/12345ABC/' \
+      -H 'accept: application/json' \
+      -H 'Authorization: Bearer your_access_token_here' \
+      --output policy.pdf
