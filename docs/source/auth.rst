@@ -6,7 +6,7 @@
 
 برای دریافت طرح های مربوط به تجهیزات الکترونیک از این وبسرویس استفاده کنید:
 
-    ``GET``
+    ``POST``
     ``https://api-asato.mihaninsurance.com/api-manager/login``
 
 .. code-block:: console
