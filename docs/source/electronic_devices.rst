@@ -334,7 +334,7 @@
       'https://api-asato.mihaninsurance.com/insurance_policy_buy/electronic-device/submit/<آیدی صدور بیمه نامه>' \
       -H 'accept: application/json'
 
-پرداخت فاکتور در فناوران
+پرداخت فاکتور در فناوران (روش اول)
 ----------------
 
 با فراخوانی این وب سرویس بیمه نامه در فناوران ثبت میشود :
@@ -355,7 +355,8 @@
 .. code-block:: console
 
     {
-      "factor_id": "083ba303-b9c6-412b-a8d7-e1b59f96df10"
+      "factor_id": "083ba303-b9c6-412b-a8d7-e1b59f96df10",
+      "client_call_back_url": "string"
     }
 
 بدنه خروجی وبسرویس :
@@ -367,3 +368,86 @@
       "status": "ok",
       "data": <لینک درگاه پرداخت>
     }
+
+پرداخت فاکتور در فناوران (روش دوم)
+----------------
+
+ با فراخوانی این وب سرویس بیمه نامه در فناوران ثبت میشود با این تفاوت که ایدی تراکنش هم جهت استعلام پرداخت بازگردانی میشود: 
+
+    ``POST``
+    ``https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay_v2``
+
+
+.. code-block:: console
+
+   curl -X 'POST' \
+  'https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay_v2' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json'
+
+بدنه ورودی :
+
+.. code-block:: console
+
+    {
+      "factor_id": "083ba303-b9c6-412b-a8d7-e1b59f96df10",
+      "client_call_back_url": "string"
+    }
+
+بدنه خروجی وبسرویس :
+
+
+.. code-block:: console
+
+    {
+      "status": "ok",
+      "data": {
+        "url": "<لینک درگاه پرداخت>",
+        "transaction_id": "string"//ایدی تراکنش جهت استعلام پرداخت
+      }
+    }
+
+
+استعلام نتیجه پرداخت 
+----------------
+با فراخوانی این وب سرویس نتیجه پرداخت قابل مشاهده خواهد بود.: 
+
+    ``GET``
+    ``https://api-asato.mihaninsurance.com/insurance-policy/afterpay/{transaction_id}``
+
+
+.. code-block:: console
+
+   curl -X 'GET' \
+  'https://api-asato.mihaninsurance.com/insurance-policy/afterpay/{transaction_id}' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json'
+
+
+
+بدنه خروجی وبسرویس :
+
+
+.. code-block:: console
+
+    {
+      "status": "ok",
+      "data": {
+        "code": 48694967,
+        "amount": 401500,
+        "bank_reference_no": "281295302492",
+        "date": "1403/05/19",
+        "operation_status": 4,
+        "op_unit_id": 220,
+        "person_id": 13616189,
+        "person_role_id": 161,
+        "is_succeeded": true,//موفق بودن
+        "transaction_type": "POLICY",
+        "transaction_related_codes": [
+          3726886
+        ],
+        "insurance_factor_id": "d1817208-4839-48d8-acd3-5d213155a1af",
+        "insurance_type_code": 17
+      }
+    }
+
