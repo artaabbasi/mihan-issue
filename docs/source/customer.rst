@@ -347,7 +347,7 @@
 با فراخوانی این وب سرویس نقش ها مورد نیاز کاربر در سیستم بیمه ساخته میشود :
 
     ``POST``
-    ``https://api-asato.mihaninsurance.com/insureds/clone_customer``
+    ``https://api-asato.mihaninsurance.com/insureds/create_customer``
 
 
 .. code-block:: console
