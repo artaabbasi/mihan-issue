@@ -79,6 +79,7 @@
 
     {
       "role_id": 161,
+      "role_ids":[161,162],//درصورت نیاز به ساختن چند رول همزمان
       "national_code": <کد ملی کاربر>,
       "city_id": <کد شهر کاربر>,
       "home_phone": "string",
@@ -344,16 +345,16 @@
 ساخت سایر نقش ها برای مشتری
 ----------------
 
-با فراخوانی این وب سرویس نقش ها مورد نیاز کاربر در سیستم بیمه ساخته میشود :
+با فراخوانی این وب سرویس نقش ها مورد نیاز کاربر در سیستم بیمه ساخته میشود : (در حالتی که کاربر قبلا کد بیمه گزاری دارد ولی نقش جدید برای وی نیاز است که ساخته شود)
 
     ``POST``
-    ``https://api-asato.mihaninsurance.com/insureds/create_customer``
+    ``https://api-asato.mihaninsurance.com/insureds/clone_customer``
 
 
 .. code-block:: console
 
    curl -X 'POST' \
-      'https://api-asato.mihaninsurance.com/insureds/create_customer' \
+      'https://api-asato.mihaninsurance.com/insureds/clone_customer' \
       -H 'accept: application/json' \
       -H 'Authorization: Bearer  <توکن شما که در مرحله احراز هویت گرفتید> \
       -H 'Content-Type: application/json'
