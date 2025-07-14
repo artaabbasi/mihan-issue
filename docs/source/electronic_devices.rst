@@ -334,10 +334,11 @@
       'https://api-asato.mihaninsurance.com/insurance_policy_buy/electronic-device/submit/<آیدی صدور بیمه نامه>' \
       -H 'accept: application/json'
 
-پرداخت فاکتور در فناوران (روش اول)
+
+پرداخت فاکتور در فناوران 
 ----------------
 
-با فراخوانی این وب سرویس بیمه نامه در فناوران ثبت میشود :
+ با فراخوانی این وب سرویس بیمه نامه در فناوران ثبت میشود با این تفاوت که ایدی تراکنش هم جهت استعلام پرداخت بازگردانی میشود: 
 
     ``POST``
     ``https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay``
@@ -347,41 +348,6 @@
 
    curl -X 'POST' \
   'https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json'
-
-بدنه ورودی :
-
-.. code-block:: console
-
-    {
-      "factor_id": "083ba303-b9c6-412b-a8d7-e1b59f96df10",
-      "client_call_back_url": "string"
-    }
-
-بدنه خروجی وبسرویس :
-
-
-.. code-block:: console
-
-    {
-      "status": "ok",
-      "data": <لینک درگاه پرداخت>
-    }
-
-پرداخت فاکتور در فناوران (روش دوم)
-----------------
-
- با فراخوانی این وب سرویس بیمه نامه در فناوران ثبت میشود با این تفاوت که ایدی تراکنش هم جهت استعلام پرداخت بازگردانی میشود: 
-
-    ``POST``
-    ``https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay_v2``
-
-
-.. code-block:: console
-
-   curl -X 'POST' \
-  'https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay_v2' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json'
 
