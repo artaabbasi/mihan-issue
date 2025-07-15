@@ -258,13 +258,13 @@
 
 با فراخوانی این وب سرویس اطلاعات کاربر در سیستم بیمه برگردانده میشود و میتوان کاربر را با دو روش کد ملی و کد رایانه بیمه دریافت کرد  :
 
-    ``GET``
+    ``POST``
     ``https://api-asato.mihaninsurance.com/insureds/get_customer``
 
 
 .. code-block:: console
 
-   curl -X 'GET' \
+   curl -X 'POST' \
       'https://api-asato.mihaninsurance.com/insureds/get_customer?national_code=XXXXX' \
       -H 'accept: application/json' \
       -H 'Authorization: Bearer  <توکن شما که در مرحله احراز هویت گرفتید> \
@@ -273,7 +273,7 @@
 
 : پارامتر های ورودی
 
-    ``national_code`` و ``customer_code``
+    ``national_code`` یا ``customer_code``
 
 
 بدنه خروجی :
