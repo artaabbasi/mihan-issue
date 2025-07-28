@@ -142,23 +142,23 @@
       ],
       "insured_devices": [
         {
-          "row": 0,
-          "caption": "string",
-          "address": "string",
-          "count": 0,
-          "brand": "string",
-          "model": "string",
-          "manufacturer_country_code": 0,
-          "production_year": 0,
-          "serial_no": "string",
-          "insured_value": 0,
+          "row": 0, // ایندکس ورودی با شروع از یک
+          "caption": "string", // نام یا توضیحات دیوایس
+          "address": "string", // آدرس
+          "count": 0, // تعداد ایتم های ورودی
+          "brand": "string",//برند موبایل
+          "model": "string",// مدل دستگاه
+          "manufacturer_country_code": 0,//کد کشور 
+          "production_year": 0,// سال ساخت دستگاه
+          "serial_no": "string",//شماره سریال
+          "insured_value": 0,//مبلغ ارزش دستگاه
           "components": [
             {
-              "component_code": 0,
-              "brand": "string",
-              "serial_no": "string",
-              "count": 0,
-              "insured_value": 0
+              "component_code": 11 ,//مقدار پیش فرض ۱۱
+              "brand": "string",//برند
+              "serial_no": "string",//شماره سریال
+              "count": 0, // شماره ایندکس شروع از 1 
+              "insured_value": 0 //ارزش 
             }
           ]
         }
