@@ -140,8 +140,8 @@
 
 برای دریافت اطلاعات کامل یک پکیج ثبت‌شده:
 
-`GET`
-`https://api-asato.mihaninsurance.com/policy-package/traveling-insurance-package/{traveling_insurance_package_id}`
+``GET``
+``https://api-asato.mihaninsurance.com/policy-package/traveling-insurance-package/{traveling_insurance_package_id}``
 
 توضیح:
 
