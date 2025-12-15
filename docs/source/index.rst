@@ -17,3 +17,4 @@
    customer
    electronic_devices
    third_party
+   travel_package
