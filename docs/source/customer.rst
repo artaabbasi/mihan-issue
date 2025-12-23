@@ -24,7 +24,7 @@
 
 بدنه ورودی :
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "customers": [
@@ -37,7 +37,7 @@
 
 بدنه خروجی :
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "status": "ok",
@@ -91,7 +91,7 @@
 
 بدنه خروجی :
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "status": "ok",
@@ -190,7 +190,7 @@
 
 بدنه خروجی :
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "status": "ok",
@@ -278,7 +278,7 @@
 
 بدنه خروجی :
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "status": "ok",
@@ -361,7 +361,7 @@
 
 بدنه ورودی :
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "customer_code": XXXXX,
@@ -372,7 +372,7 @@
 
 بدنه خروجی :
 
-.. code-block:: console
+.. code-block:: json
 
     {
       "status": "ok",
