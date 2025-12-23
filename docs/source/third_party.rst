@@ -297,12 +297,73 @@
 - **URL:**  
   ``https://api-asato.mihaninsurance.com/insurance_policy_buy/third-party/check_price/<آیدی صدور بیمه نامه>``
 
-پرداخت فاکتور
--------------
+پرداخت فاکتور در فناوران
+------------------------
 
-- **Method:** ``POST``
-- **URL:**  
-  ``https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay``
+با فراخوانی این وب‌سرویس، پرداخت فاکتور انجام شده و شناسه تراکنش بازگردانده می‌شود:
+
+``POST``
+``https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay``
+
+.. code-block:: console
+
+   curl -X POST \
+     'https://api-asato.mihaninsurance.com/insurance_policy_buy/factor/pay' \
+     -H 'accept: application/json' \
+     -H 'Content-Type: application/json'
+
+بدنه ورودی:
+
+.. code-block:: json
+
+   {
+     "factor_id": "083ba303-b9c6-412b-a8d7-e1b59f96df10",
+     "client_call_back_url": "string"
+   }
+
+بدنه خروجی وب‌سرویس:
+
+.. code-block:: json
+
+   {
+     "status": "ok",
+     "data": {
+       "url": "<لینک درگاه پرداخت>",
+       "transaction_id": "string"
+     }
+   }
+
+
+استعلام نتیجه پرداخت
+--------------------
+
+برای مشاهده نتیجه پرداخت از وب‌سرویس زیر استفاده کنید:
+
+``GET``
+``https://api-asato.mihaninsurance.com/insurance-policy/afterpay/{transaction_id}``
+
+.. code-block:: console
+
+   curl -X GET \
+     'https://api-asato.mihaninsurance.com/insurance-policy/afterpay/{transaction_id}' \
+     -H 'accept: application/json'
+
+بدنه خروجی وب‌سرویس:
+
+.. code-block:: json
+
+   {
+     "status": "ok",
+     "data": {
+       "code": 48694967,
+       "amount": 401500,
+       "bank_reference_no": "281295302492",
+       "date": "1403/05/19",
+       "operation_status": 4,
+       "is_succeeded": true,
+       "transaction_type": "POLICY"
+     }
+   }
 
 دریافت فایل PDF بیمه‌نامه شخص ثالث
 ==================================
