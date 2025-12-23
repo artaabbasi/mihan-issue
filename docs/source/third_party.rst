@@ -58,6 +58,100 @@
       "count": 1
     }
 
+بیمه نامه قبلی
+------------
+
+برای دریافت بیمه نامه قبلی شخص از این دو وبسرویس استفاده کنید:
+
+    ``POST``
+    ``https://api-asato.mihaninsurance.com/inquiry/car/get_unique_policy_by_national_id``
+
+.. code-block:: console
+
+    curl -X 'POST' \
+      'https://api-asato.mihaninsurance.com/inquiry/car/get_unique_policy_by_national_id' \
+      -H 'accept: application/json' \
+      -H 'Authorization: Bearer <توکن شما که در مرحله احراز هویت گرفتید> \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "national_id": "<nid>"
+    }'
+
+بدنه ورودی :
+.. code-block:: console
+
+    {
+      "national_id": "**"
+    }
+
+    ``POST``
+    ``https://api-asato.mihaninsurance.com/inquiry/car/get_policy_by_policy_code``
+
+.. code-block:: console
+
+    curl -X 'POST' \
+      'https://api-asato.mihaninsurance.com/inquiry/car/get_policy_by_policy_code' \
+      -H 'accept: application/json' \
+      -H 'Authorization: Bearer <توکن شما که در مرحله احراز هویت گرفتید> \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "policy_code": "<policy_code>"
+    }'
+
+بدنه ورودی :
+.. code-block:: console
+
+    {
+      "policy_code": "**"
+    }
+
+خروجی وب سرویس ها:
+
+.. code-block:: console
+
+    {
+      "status": "ok",
+      "data": [
+        {
+          "car_grp_cod": "2",
+          "cmp_cod": "2",
+          "cmp_nam": "**",
+          "cntry_cod": null,
+          "dis_fn_yr_num": "1",
+          "dis_fn_yr_prcnt": "5",
+          "dis_lf_yr_num": "1",
+          "dis_lf_yr_prcnt": "5",
+          "dis_prsn_yr_num": "1",
+          "dis_prsn_yr_prcnt": "5",
+          "disc_bdn_yr_num": null,
+          "fnd_cst": "0.00",
+          "h_bgn_dte": "1404/06/12",
+          "h_end_dte": "1405/06/11",
+          "h_isu_dte": "1404/06/11",
+          "ins_nam": "آرتا عباسي زنجاني",
+          "last_cmp_cod": "18",
+          "last_cmp_doc_no": null,
+          "losses": null,
+          "mtr_num": "**",
+          "ntnl_id": "**",
+          "plcy_unq_cod": "**",
+          "plk": "**",
+          "prd_dte": "1398",
+          "prnt_cmp_doc_no": "**",
+          "shs_num": "**",
+          "typ_plcy": "بيمه ثالث و حوادث",
+          "usg_cod": "8",
+          "usg_nam": "شخصی",
+          "vin": "**",
+          "veh_nam": "**",
+          "veh_sys_cod": "2"
+        }
+      ],
+      "page": null,
+      "size": null,
+      "count": null
+    }
+      
 
 ساخت درخواست صدور بیمه نامه
 ----------------
